@@ -1,0 +1,164 @@
+.titlebar {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 40px;
+  background: white;
+  border-bottom: 1px solid #F2F2F2;
+  -webkit-app-region: drag;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .titlebar > .traffic-light {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-left: 5px; }
+    .titlebar > .traffic-light:first-child {
+      margin-left: 15px; }
+    .titlebar > .traffic-light.red {
+      background: #FF6054;
+      border: 1px solid #E5463B; }
+    .titlebar > .traffic-light.yellow {
+      background: #FFC509;
+      border: 1px solid #E2A302; }
+
+#overview {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 625px;
+  overflow-y: auto; }
+  #overview::-webkit-scrollbar {
+    display: none; }
+  #overview:hover .pen {
+    opacity: .5; }
+
+.pen {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 225px;
+  border-bottom: 1px solid #F2F2F2; }
+  .pen:hover {
+    opacity: 1 !important; }
+  .pen > .image {
+    width: 370px;
+    height: 180px;
+    background-size: auto 180px;
+    background-color: white;
+    background-position: center center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+  .pen > .info {
+    border-top: 1px solid #F2F2F2;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+    .pen > .info > .item {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      margin: 0px 10px;
+      color: rgba(0, 0, 0, 0.5); }
+      .pen > .info > .item > img {
+        margin: 0px 8px; }
+
+#details {
+  position: absolute;
+  left: 0px;
+  top: 41px;
+  width: 100%;
+  height: 100%;
+  background: white;
+  -webkit-transition: -webkit-transform .3s ease-in-out;
+  transition: -webkit-transform .3s ease-in-out;
+  transition: transform .3s ease-in-out;
+  transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%); }
+  #details.active {
+    -webkit-transform: translateX(0%);
+            transform: translateX(0%); }
+  #details .field {
+    width: 100%;
+    height: 40px;
+    background: #F8FAFD;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    #details .field:nth-child(odd) {
+      background: #FCFDFE; }
+    #details .field > .name {
+      opacity: .5;
+      -ms-flex-preferred-size: 110px;
+          flex-basis: 110px;
+      margin-left: 20px; }
+    #details .field > .value {
+      -webkit-box-flex: 1;
+          -ms-flex: 1;
+              flex: 1;
+      border: none;
+      background: none;
+      outline: none;
+      font-size: 1em; }
+
+body, html {
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+  font-family: 'Roboto';
+  font-size: 12px; }
+
+#app {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100%; }
+
+#bar {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  background: #4A90E2;
+  width: 100%;
+  height: 2px; }
+
+.view {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1; }

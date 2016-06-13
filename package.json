@@ -1,0 +1,34 @@
+{
+  "name": "codepen-overlay",
+  "version": "1.0.0",
+  "description": "```js",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "build": "babel src --out-dir dist -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.5.0",
+    "electron-rebuild": "^1.1.5",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-pug": "^3.0.3",
+    "gulp-sass": "^2.3.1",
+    "gulp-watch": "^4.3.6"
+  },
+  "dependencies": {
+    "express": "^4.13.4",
+    "pug": "^2.0.0-beta3",
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0",
+    "request": "^2.72.0",
+    "rss-to-json": "^1.0.2",
+    "xml2js": "^0.4.16",
+    "xml2json": "^0.9.1"
+  }
+}

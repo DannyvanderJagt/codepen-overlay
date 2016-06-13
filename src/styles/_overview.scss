@@ -1,0 +1,59 @@
+#overview{
+  flex: 1;
+  height: 625px;
+  overflow-y: auto;
+  
+  // Hide the scroll bar without
+  // losing the scroll function.
+  &::-webkit-scrollbar { 
+    display: none; 
+  }
+
+  &:hover .pen{
+    opacity: .5;
+  }
+}
+
+.pen{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 225px;
+
+  border-bottom: 1px solid $border;
+
+  &:hover{
+    opacity: 1 !important;
+  }
+
+  & > .image{
+    width: 370px;
+    height: 180px;
+    background-size: auto 180px;
+    background-color: white;
+    background-position: center center;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  & > .info{
+    border-top: 1px solid $border;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+
+    & > .item{
+      display: flex;
+      margin: 0px 10px;
+
+      color: rgba(0,0,0, 0.5);
+
+      & > img{
+        margin: 0px 8px;
+      }
+    }
+  }
+}

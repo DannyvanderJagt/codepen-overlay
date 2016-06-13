@@ -1,0 +1,46 @@
+#details{
+  position: absolute;
+
+  left: 0px;
+  top: 41px;
+  width: 100%;
+  height: 100%;
+  background: white;
+
+  transition: transform .3s ease-in-out;
+  transform: translateX(100%);
+
+  &.active{
+    transform: translateX(0%);
+  }
+
+  & .field{
+    width: 100%;
+    height: 40px;
+    background: #F8FAFD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &:nth-child(odd){
+      background: #FCFDFE;
+    }
+
+    
+    & > .name{
+      opacity: .5;
+      flex-basis: 110px;
+      margin-left: 20px;
+    }
+
+    & > .value{
+      flex: 1;
+      border: none;
+      background: none;
+      outline: none;
+      font-size: 1em;
+    }
+
+  }
+
+}
