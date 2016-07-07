@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = {
+var State = {
 
   username: 'thesuitcase',
   active: undefined,
@@ -37,9 +37,17 @@ exports.default = {
     }
   },
   setPen: function setPen(id, data) {
-    this.pens[id] = data;
+    if (!this.pens[id]) {
+      this.pens[id] = {};
+    }
+
+    Object.assign(this.pens[id], data);
     if (this._callback) {
       this._callback.setState(this);
     }
   }
 };
+
+window.State = State;
+
+exports.default = State;

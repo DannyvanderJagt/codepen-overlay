@@ -46,7 +46,7 @@ var Overview = (function (_Component) {
         return _react2.default.createElement(
           'div',
           { className: 'pen', key: id, onMouseDown: _this2.goToDetails.bind(_this2, id) },
-          _react2.default.createElement('div', { className: 'image', style: { backgroundImage: 'url(http://codepen.io/' + _state2.default.username + '/pen/' + id + '/image/large.png)' } }),
+          _react2.default.createElement('div', { className: 'image', style: { backgroundImage: 'url(http://codepen.io/' + _state2.default.username + '/pen/' + id + '/image/small.png)' } }),
           _react2.default.createElement(
             'div',
             { className: 'info' },

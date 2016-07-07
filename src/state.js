@@ -1,4 +1,4 @@
-export default {
+let State = {
 
 
   username: 'thesuitcase',
@@ -34,10 +34,18 @@ export default {
   },
 
   setPen(id, data){
-    this.pens[id] = data;
+    if(!this.pens[id]){
+      this.pens[id] = {}
+    }
+    
+    Object.assign(this.pens[id], data);
     if(this._callback){
       this._callback.setState(this)
     }
   }
 
 }
+
+window.State = State;
+
+export default State;

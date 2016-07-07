@@ -35,8 +35,6 @@ let Data = {
       
 
     })
-
-        console.log(State);
   }
 
 

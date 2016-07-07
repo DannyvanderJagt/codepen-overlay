@@ -14,6 +14,10 @@ var _state = require('../state');
 
 var _state2 = _interopRequireDefault(_state);
 
+var _input = require('../components/input');
+
+var _input2 = _interopRequireDefault(_input);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -32,17 +36,83 @@ var Details = (function (_Component) {
   }
 
   _createClass(Details, [{
-    key: 'handleChange',
-    value: function handleChange() {}
-  }, {
     key: 'back',
     value: function back() {
       _state2.default.set({ active: undefined });
     }
   }, {
+    key: 'renderInputFields',
+    value: function renderInputFields() {
+      var pen = this.props.pen || {};
+
+      if (!pen) {
+        return;
+      }
+
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(_input2.default, { title: 'Id', pen: pen.id, name: 'id' }),
+        _react2.default.createElement(_input2.default, { title: 'Title', pen: pen.id, name: 'title' }),
+        _react2.default.createElement(_input2.default, { title: 'Subtitle', pen: pen.id, name: 'subtitle' }),
+        _react2.default.createElement(
+          'div',
+          { className: 'field' },
+          _react2.default.createElement(
+            'div',
+            { className: 'name' },
+            'Left'
+          ),
+          _react2.default.createElement(
+            'select',
+            null,
+            Object.keys(_state2.default.pens).map(function (key) {
+              return _react2.default.createElement(
+                'option',
+                { value: key },
+                _state2.default.pens[key].title
+              );
+            })
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'field' },
+          _react2.default.createElement(
+            'div',
+            { className: 'name' },
+            'Right'
+          ),
+          _react2.default.createElement(
+            'select',
+            null,
+            Object.keys(_state2.default.pens).map(function (key) {
+              return _react2.default.createElement(
+                'option',
+                { value: key },
+                _state2.default.pens[key].title
+              );
+            })
+          )
+        ),
+        _react2.default.createElement(_input2.default, { title: 'Gif', pen: pen.id, name: 'gif' }),
+        _react2.default.createElement(_input2.default, { title: 'Time', pen: pen.id, name: 'time' }),
+        _react2.default.createElement(_input2.default, { title: 'Credits', pen: pen.id, name: 'credits' })
+      );
+    }
+  }, {
     key: 'render',
     value: function render() {
       var pen = this.props.pen || {};
+
+      var image = undefined;
+
+      if (pen && pen.id) {
+        image = _react2.default.createElement('div', {
+          className: 'image',
+          style: { backgroundImage: 'url(http://codepen.io/' + _state2.default.username + '/pen/' + pen.id + '/image/small.png)' },
+          onMouseDown: this.back.bind(this) });
+      }
 
       return _react2.default.createElement(
         'div',
@@ -52,10 +122,7 @@ var Details = (function (_Component) {
         _react2.default.createElement(
           'div',
           { className: 'pen' },
-          _react2.default.createElement('div', {
-            className: 'image',
-            style: { backgroundImage: 'url(http://codepen.io/' + _state2.default.username + '/pen/' + pen.id + '/image/large.png)' },
-            onMouseDown: this.back.bind(this) }),
+          image,
           _react2.default.createElement(
             'div',
             { className: 'info' },
@@ -91,76 +158,7 @@ var Details = (function (_Component) {
             )
           )
         ),
-        _react2.default.createElement(
-          'div',
-          { className: 'field' },
-          _react2.default.createElement(
-            'div',
-            { className: 'name' },
-            'Id'
-          ),
-          _react2.default.createElement('input', { className: 'value', type: 'text', value: pen.id || '', onChange: this.handleChange })
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'field' },
-          _react2.default.createElement(
-            'div',
-            { className: 'name' },
-            'Title'
-          ),
-          _react2.default.createElement('input', { className: 'value', type: 'text', value: pen.title || '', onChange: this.handleChange })
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'field' },
-          _react2.default.createElement(
-            'div',
-            { className: 'name' },
-            'Sub Title'
-          ),
-          _react2.default.createElement('input', { className: 'value', type: 'text', value: pen.subtitle || '', onChange: this.handleChange })
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'field' },
-          _react2.default.createElement(
-            'div',
-            { className: 'name' },
-            'Left'
-          ),
-          _react2.default.createElement('input', { className: 'value', type: 'text', value: pen.left || '', onChange: this.handleChange })
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'field' },
-          _react2.default.createElement(
-            'div',
-            { className: 'name' },
-            'Right'
-          ),
-          _react2.default.createElement('input', { className: 'value', type: 'text', value: pen.right || '', onChange: this.handleChange })
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'field' },
-          _react2.default.createElement(
-            'div',
-            { className: 'name' },
-            'Gif'
-          ),
-          _react2.default.createElement('input', { className: 'value', type: 'text', value: pen.gif || '', onChange: this.handleChange })
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'field' },
-          _react2.default.createElement(
-            'div',
-            { className: 'name' },
-            'Time'
-          ),
-          _react2.default.createElement('input', { className: 'value', type: 'text', value: pen.time || '', onChange: this.handleChange })
-        )
+        this.renderInputFields()
       );
     }
   }]);

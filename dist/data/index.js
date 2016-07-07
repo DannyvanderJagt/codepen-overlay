@@ -56,8 +56,6 @@ var Data = {
         title: item.title[0]
       });
     });
-
-    console.log(_state2.default);
   }
 };
 

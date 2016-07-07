@@ -15,7 +15,7 @@ class Overview extends Component{
       let pen = this.props.pens[id];
       return (
         <div className='pen' key={id} onMouseDown={this.goToDetails.bind(this, id)}>
-          <div className='image' style={{backgroundImage: `url(http://codepen.io/${State.username}/pen/${id}/image/large.png)`}}/>
+          <div className='image' style={{backgroundImage: `url(http://codepen.io/${State.username}/pen/${id}/image/small.png)`}}/>
           <div className='info'>
             <div className='item'>
               <img src='./images/view.svg'/>
